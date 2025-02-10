@@ -1,0 +1,367 @@
+            #raise Exception("Breaking the try block 1")
+
+            #script = """
+            #    let combobox = document.querySelector('//*[@id=":r1:"]'); // Adjust the selector
+            #    combobox.value = '13/07/2022';
+            #    combobox.dispatchEvent(new Event('change'));
+            #    """
+            #driver.execute_script(script)
+            #raise Exception("Breaking the try block 2")
+
+            #wait = WebDriverWait(driver, 10)
+
+            #div_element = WebDriverWait(driver, 10).until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div[contains(@class, 'MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1y1meaf')]"))
+            #)
+            #driver.execute_script("""
+            #    arguments[0].setAttribute('class', 'MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-focused MuiInputBase-formControl css-1y1meaf');
+            #""", div_element)
+
+            #target_div = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div/div[text()='Hoje']"))
+            #)
+            #driver.execute_script("""
+            #                        arguments[0].innerText = 'Personalizado';
+            #                      """, target_div) #Ano
+
+            #target_div2 = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div/input[@value='2025-1-4']"))
+            #)
+            #driver.execute_script("arguments[0].value = '2024-1-4';", target_div2)
+
+            #target_div2 = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div/input[@value='2025-1-4']"))
+            #)
+            #driver.execute_script("""arguments[0].value = 'personalized';
+            #                        arguments[0].dispatchEvent(new Event('input', { bubbles: true }));
+            #                        arguments[0].dispatchEvent(new Event('change', { bubbles: true }));
+            #                      """, target_div2)
+            
+
+            #svg_element = WebDriverWait(driver, 10).until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div/svg[contains(@class, 'MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined MuiSelect-iconOpen css-rb33ib')]"))
+            #)
+            #driver.execute_script("""
+            #    arguments[0].setAttribute('class', 'MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-1u9aopd');
+            #""", svg_element)
+
+            #div_element = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div[contains(@class, 'MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-i50165')]"))
+            #)
+            #driver.execute_script("""
+            #    arguments[0].setAttribute('class', 'MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd css-i50165');
+            #""", div_element)
+
+            #target_div4 = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id=':r1:'][@inputmode='text']"))
+            #)
+            #driver.execute_script("""arguments[0].value = 'numeric';
+            #arguments[0].dispatchEvent(new Event('input', { bubbles: true }));
+            #arguments[0].dispatchEvent(new Event('change', { bubbles: true }));
+            #                      """, target_div4)
+
+            #target_div3 = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id=':r1:'][@value='06/01/2025']"))
+            #)
+            #driver.execute_script("""arguments[0].value = '13/07/2022';
+            #arguments[0].dispatchEvent(new Event('input', { bubbles: true }));
+            #arguments[0].dispatchEvent(new Event('change', { bubbles: true }));
+            #                      """, target_div3)
+
+
+            #el = driver.find_element(By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[4]/div/div/div")
+            #for option in el.find_elements_by_tag_name('text'):
+            #    if option.text == 'Ano': # or  B or C...
+            #        option.click() # select() for older versions
+            #        break
+
+            #arguments[0].dispatchEvent(new Event('input', { bubbles: true }));
+            #arguments[0].dispatchEvent(new Event('change', { bubbles: true }));
+
+            #button_element = wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[5]/div/div/div/div/button[@aria-label='Escolha uma data, data selecionada 4 de jan de 2025']"))
+            #)
+            #driver.execute_script("""
+            #    arguments[0].setAttribute('aria-label', 'Escolha uma data, data selecionada 4 de jan de 2024');
+            #""", button_element)
+
+
+
+
+   if "doe.sp.gov.br" in url:
+        try: 
+            driver.maximize_window()
+            #search_box = driver.find_element(By.NAME, "TERMO")
+            search_box = driver.find_element(By.CLASS_NAME, "css-1g557a2")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+
+            time.sleep(3)
+
+
+            button_element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//*[@id='__next']/div[2]/div/div[1]/div/div[10]/button"))
+                )
+            #driver.execute_script("arguments[0].click();", button_element)
+            driver.execute_script("""
+                    let button = arguments[0];
+                    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+                    """, button_element)
+
+ 
+            #enter_box = driver.find_element(By.CLASS_NAME, "css-1oy4u67")
+            #enter_box.send_keys(Keys.RETURN)
+            time.sleep(5)
+
+            search_elements = driver.find_elements(By.CLASS_NAME, "css-yzftv1")
+            meal = []
+
+            if len(search_elements) > 0:
+                for se in search_elements:
+                    se.click()
+                    time.sleep(1)
+                    souptext = text_from_html(driver.page_source)
+                    #soup = BeautifulSoup(driver.page_source, "html.parser")
+                    meal.append((souptext,se))
+                    #print(souptext)
+                time.sleep(50)
+
+            print("RESULTADO: ")
+            print(meal)
+
+        except: print("no result")
+
+    ### editar daqui pra baixo...
+    if "imprensaoficial" in url:
+        try :
+            search_box = driver.find_element(By.ID, "search_input")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+            search_box.send_keys(Keys.RETURN)
+            time.sleep(5)  # Aguarda os resultados carregarem
+
+            # Extrair resultados
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            results = soup.find_all("a")  # Ajustar o seletor para cada site
+            for result in results[:5]:  # Limite de 5 resultados para teste
+                print(result.text.strip(), result.get("href"))
+        except: print("no result")
+
+    if "dje.tjsp.jus.br" in url:
+        try: 
+            search_box = driver.find_element(By.NAME, "pesquisaPrincipal")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+            search_box.send_keys(Keys.RETURN)
+            time.sleep(5)  # Aguarda os resultados carregarem
+
+            # Extrair resultados  ----- edit here !!!
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            results = soup.find_all("a")  # Ajustar o seletor para cada site
+            for result in results[:5]:  # Limite de 5 resultados para teste
+                print(result.text.strip(), result.get("href"))
+        except: print("no result")
+
+    if "jusbrasil.com.br" in url:
+        try: 
+            search_box = driver.find_element(By.ID, "q")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+            search_box.send_keys(Keys.RETURN)
+            time.sleep(5)  # Aguarda os resultados carregarem
+
+            # Extrair resultados
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            results = soup.find_all("a")  # Ajustar o seletor para cada site
+            for result in results[:5]:  # Limite de 5 resultados para teste
+                print(result.text.strip(), result.get("href"))
+        except: print("no result")
+
+    if "jurisprudencia.stf.jus.br" in url or "portal.stf.jus.br" in url:
+        try: 
+            search_box = driver.find_element(By.NAME, "txtPesquisaLivre")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+            search_box.send_keys(Keys.RETURN)
+            time.sleep(5)  # Aguarda os resultados carregarem
+
+            # Extrair resultados
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            results = soup.find_all("a")  # Ajustar o seletor para cada site
+            for result in results[:5]:  # Limite de 5 resultados para teste
+                print(result.text.strip(), result.get("href"))
+        except: print("no result")
+
+    if "stj.jus.br" in url:
+        try: 
+            search_box = driver.find_element(By.ID, "txtPesquisaLivre")
+            search_box.send_keys(Keys.CONTROL, "a")  # delete pre-existing things
+            search_box.send_keys(keyword)
+            search_box.send_keys(Keys.RETURN)
+            time.sleep(5)  # Aguarda os resultados carregarem
+
+            # Extrair resultados
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            results = soup.find_all("a")  # Ajustar o seletor para cada site
+            for result in results[:5]:  # Limite de 5 resultados para teste
+                print(result.text.strip(), result.get("href"))
+        except: print("no result")
+
+
+
+
+
+
+
+'''
+class ArgsSchema(BaseModel):
+    url: List[str] = Field(
+        ..., description="where you want to search. - Fred Nesti"
+    )
+    keyword: List[str] = Field(
+        ..., description="what you want to search. - Fred Nesti"
+    )
+
+class ScrapeTribunalTool(BaseTool):
+    name: str = "ScrapeTribunalTool"
+    description: str = "ferramenta para webscraping"
+
+    def __init__(self, searchkeys):#, **kwargs):
+        super().__init__()  # Chama o construtor da classe pai  
+        sources_search = self.read_inputs()
+
+        self.args_schema = ArgsSchema()  # Define o args_schema  
+
+        #self.state = [1,1,1,1,1] # ano, mes, dia, hashes_assuntos
+        for url in sources_search:
+            for skey in searchkeys:
+                self._run(url=url, keyword=skey)
+
+        #self.db = <database_session>
+    
+    def _run(self, url: str, keyword: str) -> str:
+        ans = ""
+        for a in self.search(url=url, keyword=keyword):
+            ans += a+";"
+        return ans
+        
+
+    def read_inputs(self):
+        filename ='\jurisCrew\config\scrape.dict'
+        filename = str(project_root)+filename
+        with open(filename, 'r') as f:
+            data = f.readlines()
+        return data
+    
+    def tag_visible(self, element):
+        if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
+            return False
+        if isinstance(element, Comment):
+            return False
+        return True
+
+
+    def text_from_html(self, body):
+        soup = BeautifulSoup(body, 'html.parser')
+        texts = soup.findAll(string=True)
+        visible_texts = filter(self.tag_visible, texts)  
+        return u" ".join(t.strip() for t in visible_texts)
+
+    def search(self, url, keyword):#->list(tuple(str,selenium)):
+        driver = webdriver.Chrome()
+        driver.get(url)
+        time.sleep(1)  
+
+
+        if "doe.sp.gov.br" in url:
+            try: 
+                driver.maximize_window()
+                search_box = driver.find_element(By.CLASS_NAME, "css-1g557a2")
+                search_box.send_keys(Keys.CONTROL, "a") 
+                search_box.send_keys(keyword)
+                enter_box = driver.find_element(By.CLASS_NAME, "css-1oy4u67")
+                enter_box.send_keys(Keys.RETURN)
+                time.sleep(1)
+
+                search_elements = driver.find_elements(By.CLASS_NAME, "css-yzftv1")
+                meal = []
+                for se in search_elements[:4]: #TODO: Esse parâmetro está limitando o número máximo de jurisprudências buscadas
+                    se.click()
+                    time.sleep(1)
+                    souptext = self.text_from_html(driver.page_source)
+                    #meal.append((souptext, se))
+                    meal.append(souptext)
+                time.sleep(1)
+
+                return meal
+
+            except: 
+                return print("error scraping")
+            
+        driver.quit()
+
+
+
+
+    def save(self):
+        return None
+    
+    def get(self):
+        return None
+    
+    def monitor(self):
+        return None
+    
+    def summarize(self):
+        return None
+'''   
+
+
+
+
+
+
+
+
+
+        driver = webdriver.Chrome()
+
+        #if url == "https://doe.sp.gov.br/busca-avancada":
+        try: 
+            driver.get(url)
+            time.sleep(2) 
+
+            driver.maximize_window()
+            search_box = driver.find_element(By.CLASS_NAME, "css-1g557a2")
+            search_box.send_keys(Keys.CONTROL, "a") 
+            search_box.send_keys(keyword.lower())
+
+            time.sleep(2)
+            #date_ini_box = driver.find_element(By.CLASS_NAME, "css-i50165")
+            #date_ini_box.send_keys(Keys.CONTROL, "a") 
+            #date_ini_box.send_keys("01/01/1960")
+
+            date_ini_box = driver.find_element(By.XPATH, '/html/body/div/div[2]/div/div[1]/div/div[5]/div/div/div')
+            date_ini_box.send_keys("01/01/1960")
+            time.sleep(2)
+
+            #date_end_box = driver.find_element(By.CLASS_NAME, "css-i50165")
+            #date_end_box.send_keys("31/12/2024")
+
+            enter_box = driver.find_element(By.CLASS_NAME, "css-1oy4u67")
+            enter_box.send_keys(Keys.RETURN)
+            time.sleep(2)
+
+            search_elements = driver.find_elements(By.CLASS_NAME, "css-yzftv1")
+    
+            for se in search_elements[:5]: #TODO: Esse parâmetro está limitando o número máximo de jurisprudências buscadas
+                se.click()
+                time.sleep(1)
+
+                souptext = self.text_from_html(driver.page_source)
+                ans += souptext + " \n "
+
+            time.sleep(1)
+
+            driver.quit()
+            return ans

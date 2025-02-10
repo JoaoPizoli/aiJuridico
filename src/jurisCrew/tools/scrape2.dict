@@ -1,0 +1,14 @@
+{
+    "tjdft":{
+        "jurisprudencias":""
+    },
+    "tjrj":{
+        "jurisprudencias":"https://www3.tjrj.jus.br/ejuris/ConsultarJurisprudencia.aspx"
+    },
+    "tjsp":{
+        "jurisprudencias":"https://esaj.tjsp.jus.br/cjsg/consultaCompleta.do"
+    },
+    "tjrs":{
+        "jurisprudencias":""
+    }
+}

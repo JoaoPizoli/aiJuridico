@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+crewai           == 0.86.0
+crewai-tools     == 0.17.0
+python-dotenv    == 1.0.0
+streamlit        == 1.40.1
+chromadb         == 0.5.20
+pydantic         == 2.7.4
+langchain        == 0.3.6
+yarl             == 1.18.0
+spider-client    == 0.1.25
+selenium         == 4.27.1
+beautifulsoup4   == 4.12.3

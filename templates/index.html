@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<head>
+  <title>JusAi - Sua IA Assistente Jurídica</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', path='Libra.ico') }}">
+</head>
+<html>
+
+<body>
+  <main>
+    <div class="px-4 py-3 my-2 text-center">
+      <img class="d-block mx-auto mb-4" src="{{ url_for('static', path='images/iLibra.svg') }}" alt="JusAi Logo"
+        width="192" height="192" />
+      <h1 class="display-6 fw-bold text-primary">Bem-vindo ao JusAi</h1>
+    </div>
+    <form method="post" action="{{ url_for('hello')}}">
+      <div class="col-md-6 mx-auto text-center">
+        <label for="name" class="form-label fw-bold fs-5">Qual o tópico?</label>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+          <input type="text" class="form-control" id="topic" name="topic" style="max-width: 256px;">
+        </div>
+        <label for="name" class="form-label fw-bold fs-5">Descreva o seu caso:</label>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+          <input type="text" class="form-control" id="description" name="description" style="max-width: 1024px;">
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+          <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Gerar Defesa</button>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>

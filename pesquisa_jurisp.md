@@ -1,0 +1,1 @@
+Here are the jurisprudences selected based on the criteria provided, summarized in a structured format, including the key details relevant for further use.

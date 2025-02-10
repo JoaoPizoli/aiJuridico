@@ -1,0 +1,91 @@
+search_jurisp:
+  description: >
+    O agente fará buscas com o auxílio da ferramenta "Tribunal Scraper Tool".
+    Aguarde a conclusão dessas buscas. Utilize o resultado dessa busca para {task_moduler}. 
+    Os resultados estarão separados por ';'.
+    O agente deverá tomar nota do código completo que identifica a jurisprudência (pode ser número de processos, de decisão, do acórdão ou instrução normativa, por exemplo), o texto em inteiro teor da jurisprudência, sua frequência de utilização, seu ranking entre as jurisprudências de sua mesma área, a taxa de sucesso dela para os processos na citação dessa jurisprudência e sua data de criação.
+    
+  expected_output: >
+    A saída esperada consistirá numa lista com as seguintes informações das jurisprudências selecionadas: código, texto completo, frequência de utilização, ranking da área, taxa de sucesso e data de criação.
+  
+
+
+extract_keys:
+  description: >
+    Extraia ou escolha uma palavra por vez de {topic} e {description} para serem buscadas separadamente.
+    Selecione, no total, um máximo de {num_keys} palavras. Escreva as palavras entre aspas duplas, sem acentos e troque a letra ç por c.
+    Apenas escreva as palavras diretamente e em linhas separadas, sem adicionar nada mais ao texto.
+
+  expected_output: >
+    Conjuntos de palavras para realizar buscas.
+
+write_defense:
+  description: >
+    Escrever uma defesa para o cliente com base nas informações passadas. Tópico: {topic}. Descrição: {description}.
+    
+  expected_output: >
+    Uma defesa completa, dividida em seções que contemplem as necessidades do cliente e com citações do texto e do código das jurisprudências selecionadas.
+    A defesa deve ser redigida sob a forma de uma petição com vocabulário e forma adequados ao meio jurídico.
+    As informações de foro e vara podem ser completas com XXXXX, a serem editadas posteriormente. Datar a edição como na data atual.
+    A citação de quaisquer jurisprudências para sustentar a defesa tem de ter formatação adequada, incluindo citação do trecho desejado a ser utilizado das jurisprudências escolhidas.
+  
+
+
+
+
+
+
+
+
+
+
+
+monitor:
+  description: >
+
+  expected_output: >
+   
+summarize_data:
+  description: >
+    {topic} 
+    
+  expected_output: >
+    {description}
+  
+
+monitor_jurisp:
+  description: >
+    {topic} 
+    
+  expected_output: >
+    {description}
+
+review_work:
+  description: >
+    {topic} 
+    
+  expected_output: >
+    {description}
+
+update_work:
+  description: >
+    Atualizar os trabalhos de pesquisa, resumo e escrita, passando a nova janela de tempo de atualização, novas estatísticas de resumo atualizadas e atualizando a defesa considerando as novas jurisprudências do monitoramento.  
+    
+  expected_output: >
+    {description}
+
+getInput:
+  description: >
+    
+  expected_output: >
+    Interpretar saída desejada no input e acionar Task correspondente. Se não houver a task especificada, informar ao usuário.
+
+timeline:
+  description: >
+    
+  expected_output: >
+
+processTopol:
+  description: >
+    
+  expected_output: >
